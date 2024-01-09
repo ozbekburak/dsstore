@@ -10,8 +10,8 @@ import (
 
 	"github.com/mattetti/cocoa"
 
-	"github.com/DHowett/go-plist"
 	"golang.org/x/text/encoding/unicode"
+	"howett.net/plist"
 )
 
 var utf16be = unicode.UTF16(unicode.BigEndian, unicode.UseBOM)
