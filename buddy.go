@@ -20,7 +20,7 @@ type allocator struct {
 	unkown2  uint32
 }
 
-func newAllocator(f *os.File) (*allocator, error) {
+func NewAllocator(f *os.File) (*allocator, error) {
 	a := &allocator{
 		file:     f,
 		toc:      make(map[string]uint32),
@@ -269,7 +269,7 @@ func (a *allocator) write(oofset int, data []byte) (int, error) {
 	return a.file.Write(data)
 }
 
-//The number of bytes required by root block.
+// The number of bytes required by root block.
 func (a *allocator) rootBlockSize() int {
 	// offsets
 	size := 8

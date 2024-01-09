@@ -12,17 +12,17 @@ func TestStore(t *testing.T) {
 	}
 	defer f.Close()
 
-	a, err := newAllocator(f)
+	a, err := NewAllocator(f)
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	s, err := newStore(a)
+	s, err := NewStore(a)
 	if err != nil {
 		t.Fatal(err)
 	}
 
-	v, err := s.find("foo.txt")
+	v, err := s.Find("foo.txt")
 	if err != nil {
 		t.Fatal(err)
 	}

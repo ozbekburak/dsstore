@@ -42,7 +42,7 @@ func TestAllocator(t *testing.T) {
 	}
 	defer f.Close()
 
-	a, err := newAllocator(f)
+	a, err := NewAllocator(f)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -62,7 +62,7 @@ func TestAllocator_Entries(t *testing.T) {
 	}
 	defer f.Close()
 
-	a, err := newAllocator(f)
+	a, err := NewAllocator(f)
 	if err != nil {
 		t.Fatal(err)
 	}

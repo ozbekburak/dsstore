@@ -9,7 +9,7 @@ type store struct {
 	root, levels, records, nodes, pageSize, minUsage uint32
 }
 
-func newStore(a *allocator) (*store, error) {
+func NewStore(a *allocator) (*store, error) {
 	i := a.toc["DSDB"]
 	r, err := a.GetBlock(i)
 	if err != nil {
@@ -48,7 +48,7 @@ func newStore(a *allocator) (*store, error) {
 	return s, nil
 }
 
-func (s *store) find(pattern string) ([]*entry, error) {
+func (s *store) Find(pattern string) ([]*entry, error) {
 	var o []*entry
 	terr := s.a.traverse(s.root, func(e *entry) error {
 		ok, err := filepath.Match(pattern, e.filename)
